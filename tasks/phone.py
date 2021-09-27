@@ -17,3 +17,26 @@
 Модель: {}
 Год выпуска: {}
 """
+
+
+class Phone:
+    def __init__(self, brand: str, model: str, issue_year: int):
+        self.brand = brand
+        self.model = model
+        self.issue_year = issue_year
+
+    def receive_call(self, name: str):
+        return f"Звонит {name}"
+
+    def get_info(self):
+        return self.brand, self.model, self.issue_year
+
+    def __str__(self):
+        return f"Бренд: {self.brand} \nМодель: {self.model} \nГод выпуска: {self.issue_year}"
+
+
+device = Phone("Samsung", "S9plus", 2018)
+device.__str__()
+print(str(device))
+device.get_info()
+print(device.receive_call("FBI"))
